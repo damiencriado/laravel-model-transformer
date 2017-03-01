@@ -4,7 +4,8 @@
     "keywords": [
         "laravel",
         "api",
-        "json"
+        "json",
+        "model"
     ],
     "license": "MIT",
     "authors": [
