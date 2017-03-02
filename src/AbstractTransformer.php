@@ -14,7 +14,7 @@ abstract class AbstractTransformer
      * @return \Illuminate\Support\Collection
      * @throws \ItsDamien\Transformer\TransformerException
      */
-    public static function transform($modelOrCollection, $method = 'model'): Collection
+    public static function transform($modelOrCollection, $method = 'model')
     {
         $static = new static();
 
