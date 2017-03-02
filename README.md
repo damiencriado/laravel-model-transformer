@@ -79,7 +79,7 @@ return response([
 
 # Complex transformer
 
-The default method of your controller is named `model`, but you can add other methods:
+The default method of your transformer is named `model`, but you can add other methods:
 
 ```php
 class UserTransformer extends \ItsDamien\Transformer\AbstractTransformer
