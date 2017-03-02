@@ -48,7 +48,8 @@ return response([
 //     "user":{
 //         "first_name":"John",
 //         "last_name":"Doe",
-//         "full_name":"John Doe"
+//         "full_name":"John Doe",
+//         "photos":[]
 //     }
 // }
 ```
@@ -66,12 +67,14 @@ return response([
 //         {
 //             "first_name":"John",
 //             "last_name":"Doe",
-//             "full_name":"John Doe"
+//             "full_name":"John Doe",
+//             "photos":[]
 //         },
 //         {
 //             "first_name":"Dolores",
 //             "last_name":"Abernathy",
-//             "full_name":"Dolores Abernathy"
+//             "full_name":"Dolores Abernathy",
+//             "photos":[]
 //         },
 //     ]
 // }
@@ -148,10 +151,6 @@ return UserTransformer::transform(User::find(1), 'mergeModel');
 //     "full_name":"John Doe"
 // }
 ```
-
-## License
-
-**Laravel Model Transformer** is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
 
 [ico-version]: https://img.shields.io/packagist/v/itsdamien/laravel-model-transformer.svg
 [ico-downloads]: https://img.shields.io/packagist/dt/itsdamien/laravel-model-transformer.svg
