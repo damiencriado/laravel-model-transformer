@@ -149,6 +149,10 @@ return UserTransformer::transform(User::find(1), 'mergeModel');
 // }
 ```
 
+## License
+
+**Laravel Model Transformer** is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+
 [ico-version]: https://img.shields.io/packagist/v/itsdamien/laravel-model-transformer.svg
 [ico-downloads]: https://img.shields.io/packagist/dt/itsdamien/laravel-model-transformer.svg
 [ico-license]: https://img.shields.io/packagist/l/itsdamien/laravel-model-transformer.svg
