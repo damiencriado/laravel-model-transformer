@@ -21,18 +21,11 @@ install:
   - travis_retry composer install
 
 script:
-  - vendor/bin/phpunit
+  - mkdir -p build/logs
+  - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
 
 after_success:
-  - vendor/bin/test-reporter
-
-matrix:
-  fast_finish: true
-
-addons:
-  code_climate:
-    repo_token:
-      secure: "YIBHr7Q8HcPkUJirQQ+UyJld3IJq9GG1k0Si4oP82ShvfiIdpmu67GDnmNwHrFXhZodo8+0wBYP/9oeYG0L2kvq7YPz7EwgTekidL9wAVAMDLjdNF96wP3ydVSXxaMyNNVaeVH3wGipTHBSTOqTP1Z7Ahms0gt3TCqHztSTAPJqXRpgzEcb79IWZlnaD/RMGrItm2owu3008JTpO68GgQokFRzdZP9v3QPg2GYbMj1VoOVSwWpc+xgl4NmspW/kfDLX9Udb27iGy9DeN2SzYf/tiJAbwQOI7TQR5d8Jq4glm/qSb0sBE2FAJn00jX41xkabDPLbYlzhzV3mZ4yR8p8Zy6eHehjRI7NWOprxNJ9fNZwjSDU2D1C13Ly9DGtVM7HFO/stzNUYdnQJw38IuWWECfjUOM91fJXz+CfDIpW1K2dprRHXGiCFYa9KvyTmgxDGi19+LDDHPzTHUw8Z3suvCdQxJHgAlLyiOoso1zk7uWYKDMd37d7NkmbUbU+GlD8HNdNQIlUOfaMFTRIAOZaLgLl3CXFJosjvVL/2WmNZkRJHnXbyMuRX67AHNjhOPAW1UnxhXxkizwsXEB0J1JQdwASl3mHcNcOizIPW1QsdfZ6Xs+epICM4yOGSe52NavhoraHiKlVW26erhN/qfG/Q8myS9jnoJm4TzfSrPKXQ="
+  - travis_retry php vendor/bin/coveralls -v
 
 notifications:
   email:
