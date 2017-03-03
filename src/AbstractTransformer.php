@@ -17,6 +17,10 @@ abstract class AbstractTransformer
     public static function transform($modelOrCollection, $method = 'model')
     {
         $static = new static();
+        
+        if ($method="test") {
+            return 1;
+        }
 
         if (! method_exists($static, $method)) {
             $message = sprintf('Method [%s] does not exist in [%s].', $method, get_class($static));
