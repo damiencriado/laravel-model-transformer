@@ -17,8 +17,8 @@ abstract class AbstractTransformer
     public static function transform($modelOrCollection, $method = 'model')
     {
         $static = new static();
-        
-        if ($method="test") {
+
+        if ($method = 'test') {
             return 1;
         }
 
