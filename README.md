@@ -3,7 +3,7 @@
 [![Packagist Latest Version][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
 [![Build Status][ico-travis]][link-travis]
-[![Code Climate Coverage][ico-coverage]][link-codeclimate]
+[![Coverage Status][ico-coverage]][link-coveralls]
 [![Code Climate][ico-codeclimate]][link-codeclimate]
 [![StyleCI][ico-styleci]][link-styleci]
 [![Packagist Total Downloads][ico-downloads]][link-downloads]
@@ -158,7 +158,7 @@ return UserTransformer::transform(User::find(1), 'mergeModel');
 [ico-license]: https://img.shields.io/packagist/l/itsdamien/laravel-model-transformer.svg
 [ico-travis]: https://travis-ci.org/itsDamien/laravel-model-transformer.svg?branch=master
 [ico-codeclimate]: https://codeclimate.com/repos/58b754070eb092025f0000c7/badges/0e315aaed1faf51787ed/gpa.svg
-[ico-coverage]: https://codeclimate.com/repos/58b754070eb092025f0000c7/badges/0e315aaed1faf51787ed/coverage.svg
+[ico-coverage]: https://coveralls.io/repos/github/itsDamien/laravel-model-transformer/badge.svg?branch=master
 [ico-styleci]: https://styleci.io/repos/83455319/shield?branch=master&style=flat
 
 [link-travis]: https://travis-ci.org/itsDamien/laravel-model-transformer
@@ -166,3 +166,4 @@ return UserTransformer::transform(User::find(1), 'mergeModel');
 [link-downloads]: https://packagist.org/packages/itsdamien/laravel-model-transformer
 [link-codeclimate]: https://codeclimate.com/repos/58b754070eb092025f0000c7/feed
 [link-styleci]: https://styleci.io/repos/83455319
+[link-coveralls]: https://coveralls.io/github/itsDamien/laravel-model-transformer?branch=master
