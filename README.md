@@ -10,7 +10,7 @@
 
 This package helps API developers to easily transform Eloquent models into collection that are convertible to JSON.
 
-# Installation
+## Installation
 
 Installation using composer:
 
@@ -18,7 +18,7 @@ Installation using composer:
 composer require itsdamien/laravel-model-transformer
 ```
 
-# Usage
+## Usage
 
 Create a model transformer class by extending the `AbstractTransformer` class:
 
@@ -82,6 +82,7 @@ return response([
 ```
 
 ## Passing options to the transformer
+
 You may need to pass some options from the controller to the transformer, you can do that by providing an array of options to the `transform()` method as a second parameter:
 
 ```php
@@ -105,7 +106,7 @@ class UserTransformer extends \ItsDamien\Transformer\AbstractTransformer
 }
 ```
 
-# Complex transformer
+## Complex transformer
 
 The default method of your transformer is named `model`, but you can add other methods by adding the method name to the `transform()` method as a third parameter:
 
