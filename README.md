@@ -5,7 +5,7 @@
 [![License](https://poser.pugx.org/itsdamien/laravel-model-transformer/license)](https://packagist.org/packages/itsdamien/laravel-model-transformer)
 [![Build Status](https://travis-ci.org/itsDamien/laravel-model-transformer.svg?branch=master)](https://travis-ci.org/itsDamien/laravel-model-transformer)
 [![Coverage Status](https://coveralls.io/repos/github/itsDamien/laravel-model-transformer/badge.svg?branch=master)](https://coveralls.io/github/itsDamien/laravel-model-transformer?branch=master)
-[![Code Climate](https://codeclimate.com/repos/58b754070eb092025f0000c7/badges/0e315aaed1faf51787ed/gpa.svg)](https://codeclimate.com/repos/58b754070eb092025f0000c7/feed)
+[![Code Climate](https://codeclimate.com/github/itsDamien/laravel-model-transformer/badges/gpa.svg)](https://codeclimate.com/github/itsDamien/laravel-model-transformer)
 [![StyleCI](https://styleci.io/repos/83455319/shield?branch=master&style=flat)](https://styleci.io/repos/83455319)
 
 This package helps API developers to easily transform Eloquent models into collection that are convertible to JSON.
