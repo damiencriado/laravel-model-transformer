@@ -13,6 +13,7 @@ class UserTransformer extends AbstractTransformer
      */
     public function model($model)
     {
+        /** @var \ItsDamien\Transformer\Tests\UserModel $model */
         return collect([
             'foo' => $model->foo,
             'bar' => $model->bar,
@@ -21,6 +22,7 @@ class UserTransformer extends AbstractTransformer
 
     public function withOptions($model)
     {
+        /** @var \ItsDamien\Transformer\Tests\UserModel $model */
         return collect([
             'foo'    => $model->foo,
             'bar'    => $model->bar,
