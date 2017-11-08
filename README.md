@@ -1,4 +1,4 @@
-<p align="center"><img src="https://www.dropbox.com/s/qt0uvvotr6illx0/laravel-model-transformer.png?raw=1" width="600"></p>
+# Laravel - Model Transformer
 
 [![Latest Stable Version](https://poser.pugx.org/itsdamien/laravel-model-transformer/v/stable)](https://packagist.org/packages/itsdamien/laravel-model-transformer)
 [![Total Downloads](https://poser.pugx.org/itsdamien/laravel-model-transformer/downloads)](https://packagist.org/packages/itsdamien/laravel-model-transformer)
