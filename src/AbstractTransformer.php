@@ -49,7 +49,7 @@ abstract class AbstractTransformer
      * @return mixed
      * @throws \ItsDamien\Transformer\TransformerException
      */
-    private function transformOneModel($model, array $methods, AbstractTransformer $static)
+    private function transformOneModel($model, array $methods, self $static)
     {
         $output = collect();
 
