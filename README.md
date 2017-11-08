@@ -122,14 +122,14 @@ class UserTransformer extends \ItsDamien\Transformer\AbstractTransformer
         ]);
     }
     
-    public function withId(\Illuminate\Support\Collection $collection)
+    public function withId($model, \Illuminate\Support\Collection $collection)
     {
         return $collection->merge(collect([
             'id' => $model->id,
         ]));
     }
     
-    public function withoutFullname(\Illuminate\Support\Collection $collection)
+    public function withoutFullname($model, \Illuminate\Support\Collection $collection)
     {
         return $collection->except('full_name');
     }
