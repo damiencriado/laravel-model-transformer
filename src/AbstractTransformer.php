@@ -32,11 +32,11 @@ abstract class AbstractTransformer
         $static = new static($options);
 
         if ($modelOrCollection instanceof Model) {
-            return $static->transformOneModel($modelOrCollection, $methods, $static);
+            return self::transformOneModel($modelOrCollection, $methods, $static);
         }
 
         return collect($modelOrCollection)->map(function ($model) use ($methods, $static) {
-            return $static->transformOneModel($model, $methods, $static);
+            return self::transformOneModel($model, $methods, $static);
         });
     }
 
@@ -49,7 +49,7 @@ abstract class AbstractTransformer
      * @return mixed
      * @throws \ItsDamien\Transformer\TransformerException
      */
-    private function transformOneModel($model, array $methods, self $static)
+    protected static function transformOneModel($model, array $methods, self $static)
     {
         $output = collect();
 
