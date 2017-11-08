@@ -21,14 +21,16 @@ abstract class AbstractTransformer
 
     /**
      * @param Model|Collection|array $modelOrCollection
-     * @param array $methods
      * @param array $options
+     * @param mixed $methods
      *
      * @return \Illuminate\Support\Collection
      * @throws \ItsDamien\Transformer\TransformerException
      */
-    public static function transform($modelOrCollection, array $options = [], array $methods = [])
+    public static function transform($modelOrCollection, array $options = [], $methods = null)
     {
+        $methods = collect($methods)->toArray();
+
         $static = new static($options);
 
         if ($modelOrCollection instanceof Model) {
