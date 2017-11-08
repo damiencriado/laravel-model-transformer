@@ -20,13 +20,22 @@ class UserTransformer extends AbstractTransformer
         ]);
     }
 
-    public function withOptions($model)
+    public function withOptions(\Illuminate\Support\Collection $collection)
     {
-        /** @var \ItsDamien\Transformer\Tests\UserModel $model */
-        return collect([
-            'foo'    => $model->foo,
-            'bar'    => $model->bar,
+        return $collection->merge(collect([
             'option' => $this->options['foo'],
-        ]);
+        ]));
+    }
+
+    public function withVar(\Illuminate\Support\Collection $collection)
+    {
+        return $collection->merge(collect([
+            'var' => 'myVar',
+        ]));
+    }
+
+    public function withoutBar(\Illuminate\Support\Collection $collection)
+    {
+        return $collection->except('bar');
     }
 }

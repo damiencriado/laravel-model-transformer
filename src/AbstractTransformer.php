@@ -7,7 +7,7 @@ use Illuminate\Support\Collection;
 
 abstract class AbstractTransformer
 {
-    protected $options;
+    public $options;
 
     /**
      * Initialize transformer.
@@ -21,28 +21,50 @@ abstract class AbstractTransformer
 
     /**
      * @param Model|Collection|array $modelOrCollection
-     * @param string $method
+     * @param array $methods
      * @param array $options
      *
      * @return \Illuminate\Support\Collection
      * @throws \ItsDamien\Transformer\TransformerException
      */
-    public static function transform($modelOrCollection, array $options = [], $method = 'model')
+    public static function transform($modelOrCollection, array $options = [], array $methods = [])
     {
         $static = new static($options);
 
-        if (! method_exists($static, $method)) {
-            $message = sprintf('Method [%s] does not exist in [%s].', $method, get_class($static));
-            throw new TransformerException($message);
-        }
-
         if ($modelOrCollection instanceof Model) {
-            return collect($static->{$method}($modelOrCollection));
+            return $static->transformOneModel($modelOrCollection, $methods, $static);
         }
 
-        return collect($modelOrCollection)->map(function ($model) use ($method, $static) {
-            return collect($static->{$method}($model));
+        return collect($modelOrCollection)->map(function ($model) use ($methods, $static) {
+            return $static->transformOneModel($model, $methods, $static);
         });
+    }
+
+    /**
+     * @param $model
+     * @param array $methods
+     *
+     * @param $static
+     *
+     * @return mixed
+     * @throws \ItsDamien\Transformer\TransformerException
+     */
+    private function transformOneModel($model, array $methods, AbstractTransformer $static)
+    {
+        $output = collect();
+
+        $output = $output->merge(collect($static->model($model)));
+
+        foreach ($methods as $method) {
+            if (! method_exists($static, $method)) {
+                $message = sprintf('Method [%s] does not exist in [%s].', $method, get_class($static));
+                throw new TransformerException($message);
+            }
+
+            $output = collect($static->{$method}($output));
+        }
+
+        return $output;
     }
 
     /**
