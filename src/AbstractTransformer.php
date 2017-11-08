@@ -63,7 +63,7 @@ abstract class AbstractTransformer
                 throw new TransformerException($message);
             }
 
-            $output = collect($static->{$method}($output));
+            $output = collect($static->{$method}($model, $output));
         }
 
         return $output;

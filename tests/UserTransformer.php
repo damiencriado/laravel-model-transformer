@@ -20,21 +20,21 @@ class UserTransformer extends AbstractTransformer
         ]);
     }
 
-    public function withOptions(\Illuminate\Support\Collection $collection)
+    public function withOptions($model, \Illuminate\Support\Collection $collection)
     {
         return $collection->merge(collect([
             'option' => $this->options['foo'],
         ]));
     }
 
-    public function withVar(\Illuminate\Support\Collection $collection)
+    public function withVar($model, \Illuminate\Support\Collection $collection)
     {
         return $collection->merge(collect([
             'var' => 'myVar',
         ]));
     }
 
-    public function withoutBar(\Illuminate\Support\Collection $collection)
+    public function withoutBar($model, \Illuminate\Support\Collection $collection)
     {
         return $collection->except('bar');
     }
