@@ -108,7 +108,7 @@ class UserTransformer extends \ItsDamien\Transformer\AbstractTransformer
 
 ## Complex transformer
 
-The default method of your transformer is named `model`, but you can add other methods by adding the method name to the `transform()` method as a third parameter:
+Your transformer will always transform your model with the `model` method. Then you can alter the transformer by adding your `with` or `without` methods to the `transform()` method as a third parameter:
 
 ```php
 class UserTransformer extends \ItsDamien\Transformer\AbstractTransformer
@@ -122,21 +122,16 @@ class UserTransformer extends \ItsDamien\Transformer\AbstractTransformer
         ]);
     }
     
-    public function withId($model)
+    public function withId(\Illuminate\Support\Collection $collection)
     {
-        return collect([
-            'id' => $model->id,
-            'first_name' => $model->first_name,
-            'last_name'  => $model->last_name,
-            'full_name'  => $model->first_name.' '.$model->last_name,
-        ]);
-    }
-    
-    public function mergeModel($model)
-    {
-        return $this->model($model)->merge(collect([
+        return $collection->merge(collect([
             'id' => $model->id,
         ]));
+    }
+    
+    public function withoutFullname(\Illuminate\Support\Collection $collection)
+    {
+        return $collection->except('full_name');
     }
 }
 ```
@@ -155,7 +150,7 @@ return UserTransformer::transform(User::find(1));
 ```
 
 ```php
-return UserTransformer::transform(User::find(1), [], 'withId');
+return UserTransformer::transform(User::find(1), [], ['withId']);
 
 // Output:
 // {
@@ -167,13 +162,22 @@ return UserTransformer::transform(User::find(1), [], 'withId');
 ```
 
 ```php
-return UserTransformer::transform(User::find(1), [], 'mergeModel');
+return UserTransformer::transform(User::find(1), [], ['withoutFullname']);
+
+// Output:
+// {
+//     "first_name":"John",
+//     "last_name":"Doe",
+// }
+```
+
+```php
+return UserTransformer::transform(User::find(1), [], ['withId', 'withoutFullname']);
 
 // Output:
 // {
 //     "id":1,
 //     "first_name":"John",
 //     "last_name":"Doe",
-//     "full_name":"John Doe"
 // }
 ```
