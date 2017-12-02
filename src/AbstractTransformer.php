@@ -53,9 +53,7 @@ abstract class AbstractTransformer
      */
     protected static function transformOneModel($model, array $methods, self $static)
     {
-        $output = collect();
-
-        $output = $output->merge(collect($static->model($model)));
+        $output = collect($static->model($model));
 
         foreach ($methods as $method) {
             if (! method_exists($static, $method)) {
