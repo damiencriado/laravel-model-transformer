@@ -1,11 +1,12 @@
-# Laravel - Model Transformer
+![Laravel Model Transformer](https://ohmybadge.com/ohmybadge.svg?a=LARAVEL&b=MODEL%20TRANSFORMER&s=raspberry)
+---
 
 [![Latest Stable Version](https://poser.pugx.org/itsdamien/laravel-model-transformer/v/stable)](https://packagist.org/packages/itsdamien/laravel-model-transformer)
 [![Total Downloads](https://poser.pugx.org/itsdamien/laravel-model-transformer/downloads)](https://packagist.org/packages/itsdamien/laravel-model-transformer)
 [![License](https://poser.pugx.org/itsdamien/laravel-model-transformer/license)](https://packagist.org/packages/itsdamien/laravel-model-transformer)
 [![Build Status](https://travis-ci.org/itsDamien/laravel-model-transformer.svg?branch=master)](https://travis-ci.org/itsDamien/laravel-model-transformer)
-[![Coverage Status](https://coveralls.io/repos/github/itsDamien/laravel-model-transformer/badge.svg?branch=master)](https://coveralls.io/github/itsDamien/laravel-model-transformer?branch=master)
-[![Code Climate](https://codeclimate.com/github/itsDamien/laravel-model-transformer/badges/gpa.svg)](https://codeclimate.com/github/itsDamien/laravel-model-transformer)
+[![Maintainability](https://api.codeclimate.com/v1/badges/934aaec26c339fb46be2/maintainability)](https://codeclimate.com/github/itsDamien/laravel-model-transformer/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/934aaec26c339fb46be2/test_coverage)](https://codeclimate.com/github/itsDamien/laravel-model-transformer/test_coverage)
 [![StyleCI](https://styleci.io/repos/83455319/shield?branch=master&style=flat)](https://styleci.io/repos/83455319)
 
 This package helps API developers to easily transform Eloquent models into collection that are convertible to JSON.
