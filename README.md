@@ -1,5 +1,4 @@
-![Laravel Model Transformer](https://ohmybadge.com/ohmybadge.svg?a=LARAVEL&b=MODEL%20TRANSFORMER&s=raspberry)
----
+# Laravel Model Transformer
 
 [![Latest Stable Version](https://poser.pugx.org/itsdamien/laravel-model-transformer/v/stable)](https://packagist.org/packages/itsdamien/laravel-model-transformer)
 [![Total Downloads](https://poser.pugx.org/itsdamien/laravel-model-transformer/downloads)](https://packagist.org/packages/itsdamien/laravel-model-transformer)
